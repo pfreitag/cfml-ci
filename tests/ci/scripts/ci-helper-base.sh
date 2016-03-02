@@ -34,7 +34,7 @@ function download_and_extract {
 		cp $1 $FILENAME
 	else
 		echo "Downloading $1 to $FILENAME"
-		wget $WGET_OPTS $1 -O $FILENAME
+		curl --location -o $1 $FILENAME
 	fi
 
 	if [[ "$FILENAME" == *zip ]]; then
